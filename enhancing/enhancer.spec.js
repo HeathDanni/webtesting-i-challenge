@@ -15,4 +15,33 @@ describe("Enhancer tests", () => {
                 enhancement: 5
             })
     })
+
+    it("succeeds", () => {
+        expect(enhancer.success({
+            name: "Item",
+            durability: 10,
+            enhancement: 5
+        }))
+            .toEqual({
+                name: "Item",
+                durability: 10,
+                enhancement: 6
+            })
+        expect(enhancer.success({
+            name: "Item",
+            durability: 10,
+            enhancement: 20
+        }))
+            .toEqual({
+                name: "Item",
+                durability: 10,
+                enhancement: 20
+                })
+        
+    })
+
+    it("fails", () => {
+
+    })
+
 })
